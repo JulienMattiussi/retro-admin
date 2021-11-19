@@ -3,6 +3,7 @@ import * as React from "react";
 import { Admin, Resource, RouteWithoutLayout } from "react-admin"; // eslint-disable-line import/no-unresolved
 import { render } from "react-dom";
 import { Route } from "react-router-dom";
+import { createTheme } from "@material-ui/core/styles";
 
 import authProvider from "./authProvider";
 import comments from "./comments";
@@ -15,12 +16,22 @@ import posts from "./posts";
 import users from "./users";
 import tags from "./tags";
 
+const theme = createTheme({
+  typography: {
+    fontFamily: "inherit",
+  },
+  palette: {
+    //type: "dark",
+  },
+});
+
 render(
   <React.StrictMode>
     <Admin
       authProvider={authProvider}
       dataProvider={dataProvider}
       i18nProvider={i18nProvider}
+      theme={theme}
       title="Retro Admin"
       layout={Layout}
       customRoutes={[

@@ -1,16 +1,16 @@
 import * as React from "react";
 import { useSelector } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
-import { MenuItemLink, getResources } from "react-admin";
+import { useTranslate, MenuItemLink, getResources } from "react-admin";
 import { withRouter } from "react-router-dom";
 import classnames from "classnames";
 
 const Menu = ({}) => {
   const resources = useSelector(getResources);
   const classes = useStyles();
+  const translate = useTranslate();
 
   const posts = resources[0];
-  console.log(posts);
   return (
     <nav className={classnames(classes.root, "tui-sidenav active")}>
       {posts && (
@@ -18,23 +18,31 @@ const Menu = ({}) => {
           <li>
             <MenuItemLink
               to={{ pathname: `/${posts.name}` }}
-              primaryText={(posts.options && posts.options.label) || posts.name}
-              sidebarIsOpen={true}
+              primaryText={translate(
+                `resources.${(posts.options && posts.options.label) ||
+                  posts.name}.name`,
+                {
+                  smart_count: 2,
+                }
+              )}
             />
           </li>
         </ul>
       )}
       <ul>
         {resources
-          .filter((item, index) => index > 0)
+          .filter((_, index) => index > 0)
           .map((resource) => (
             <li key={resource.name}>
               <MenuItemLink
                 to={{ pathname: `/${resource.name}` }}
-                primaryText={
-                  (resource.options && resource.options.label) || resource.name
-                }
-                sidebarIsOpen={true}
+                primaryText={translate(
+                  `resources.${(resource.options && resource.options.label) ||
+                    resource.name}.name`,
+                  {
+                    smart_count: 2,
+                  }
+                )}
               />
             </li>
           ))}
@@ -45,14 +53,13 @@ const Menu = ({}) => {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    top: theme.spacing(4),
+    top: theme.spacing(1),
     "& ul": {
       marginTop: -2,
       textTransform: "capitalize",
       "& a": {
         paddingLeft: 0,
         color: "black",
-        font: "inherit",
       },
       "&:first-child": {
         marginTop: 20,
