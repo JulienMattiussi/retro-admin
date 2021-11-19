@@ -1,91 +1,39 @@
 {
-    "private": true,
-    "name": "react-admin-lerna",
+    "name": "simple",
+    "version": "3.0.0",
     "scripts": {
-        "build": "lerna run build",
-        "watch": "lerna run --parallel watch",
-        "test-unit": "cross-env NODE_ENV=test cross-env BABEL_ENV=cjs NODE_ICU_DATA=./node_modules/full-icu jest",
-        "test-unit-ci": "cross-env NODE_ENV=test cross-env BABEL_ENV=cjs NODE_ICU_DATA=./node_modules/full-icu jest --runInBand",
-        "test-e2e": "yarn run -s build && cross-env NODE_ENV=test && cd cypress && yarn -s test",
-        "test-e2e-local": "cd cypress && yarn -s start",
-        "test": "yarn -s test-unit && yarn -s test-e2e",
-        "doc": "cd docs && jekyll server . --watch",
-        "lint": "eslint --ext .js,.ts,.tsx \"./packages/**/src/**/*.{js,ts,tsx}\" \"./examples/**/src/**/*.{js,ts,tsx}\" \"./cypress/**/*.{js,ts,tsx}\"",
-        "prettier": "prettier --config ./.prettierrc.js --write --list-different \"packages/*/src/**/*.{js,json,ts,tsx,css,md}\" \"examples/*/src/**/*.{js,ts,json,tsx,css,md}\" \"cypress/**/*.{js,ts,json,tsx,css,md}\"",
-        "run-simple": "cd examples/simple && yarn -s start",
-        "run-no-code": "cd examples/no-code && yarn dev",
-        "run-tutorial": "cd examples/tutorial && yarn -s start",
-        "run-demo": "cd examples/demo && cross-env REACT_APP_DATA_PROVIDER=rest yarn -s start",
-        "build-demo": "cd examples/demo && cross-env REACT_APP_DATA_PROVIDER=rest yarn -s build",
-        "run-graphql-demo": "cd examples/demo && cross-env REACT_APP_DATA_PROVIDER=graphql yarn -s start",
-        "run-demo-watch": "concurrently \"yarn run watch\" \"yarn run run-demo\"",
-        "run-graphql-demo-watch": "concurrently \"yarn run watch\" \"yarn run run-graphql-demo\"",
-        "run-crm": "cd examples/crm && yarn -s start",
-        "build-crm": "cd examples/crm && yarn -s build"
+        "dev": "./node_modules/.bin/webpack-dev-server --progress --color --hot --watch --mode development",
+        "start": "vite",
+        "build": "vite build",
+        "serve": "vite preview"
     },
-    "jest": {
-        "globalSetup": "./test-global-setup.js",
-        "setupFilesAfterEnv": [
-            "./test-setup.js"
-        ],
-        "preset": "ts-jest/presets/js-with-ts",
-        "testPathIgnorePatterns": [
-            "/node_modules/",
-            "/lib/",
-            "/esm/",
-            "/examples/simple/"
-        ],
-        "transformIgnorePatterns": [
-            "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs|ts|tsx)$"
-        ],
-        "globals": {
-            "ts-jest": {
-                "isolatedModules": true
-            }
-        }
+    "dependencies": {
+        "@material-ui/core": "^4.12.1",
+        "@material-ui/icons": "^4.11.2",
+        "ra-data-fakerest": "^3.9.3",
+        "ra-i18n-polyglot": "^3.12.4",
+        "ra-input-rich-text": "^3.12.0",
+        "ra-language-english": "^3.12.4",
+        "ra-language-french": "^3.12.4",
+        "react": "^17.0.0",
+        "react-admin": "^3.12.4",
+        "react-dom": "^17.0.0",
+        "tuicss": "^2.1.1"
     },
     "devDependencies": {
-        "@types/jest": "^26.0.19",
-        "@types/react": "^17.0.20",
-        "@types/react-redux": "^7.1.1",
-        "@typescript-eslint/eslint-plugin": "^4.9.1",
-        "@typescript-eslint/parser": "^4.9.1",
-        "babel-eslint": "^10.1.0",
-        "concurrently": "^5.1.0",
-        "cross-env": "^5.2.0",
-        "eslint": "^7.7.0",
-        "eslint-config-prettier": "^6.11.0",
-        "eslint-config-react-app": "^5.2.1",
-        "eslint-plugin-cypress": "^2.11.1",
-        "eslint-plugin-flowtype": "^5.2.0",
-        "eslint-plugin-import": "^2.22.0",
-        "eslint-plugin-jsx-a11y": "^6.3.1",
-        "eslint-plugin-prettier": "^3.1.4",
-        "eslint-plugin-react": "^7.20.6",
-        "eslint-plugin-react-hooks": "^4.1.0",
-        "express": "~4.16.3",
-        "full-icu": "~1.4.0",
-        "husky": "^2.3.0",
-        "jest": "26.6.0",
-        "jest-circus": "26.6.0",
-        "jest-resolve": "26.6.0",
-        "jest-watch-typeahead": "0.6.1",
-        "lerna": "~2.9.1",
-        "lint-staged": "^8.1.7",
-        "lolex": "~2.3.2",
-        "mutationobserver-shim": "^0.3.3",
-        "prettier": "~2.1.1",
-        "raf": "~3.4.1",
-        "ts-jest": "^26.4.4",
-        "wait-on": "^3.2.0",
-        "whatwg-fetch": "^3.0.0"
-    },
-    "workspaces": [
-        "packages/*",
-        "examples/*",
-        "cypress"
-    ],
-    "dependencies": {
-        "typescript": "^4.4.0"
+        "@babel/preset-react": "^7.12.10",
+        "@vitejs/plugin-react-refresh": "^1.3.3",
+        "html-loader": "~1.3.0",
+        "html-webpack-plugin": "~4.3.0",
+        "ignore-not-found-export-plugin": "^1.0.1",
+        "proxy-polyfill": "^0.3.0",
+        "react-app-polyfill": "^1.0.4",
+        "style-loader": "~1.2.1",
+        "ts-loader": "^8.0.14",
+        "typescript": "^4.4.0",
+        "vite": "^2.2.3",
+        "webpack": "~4.5.0",
+        "webpack-cli": "~2.0.13",
+        "webpack-dev-server": "~3.1.11"
     }
 }
