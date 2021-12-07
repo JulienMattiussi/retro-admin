@@ -415,6 +415,15 @@ const theme = createTheme({
         padding: 0,
       },
     },
+    RaLoginForm: {
+      input: {
+        "& label": {
+          "&:after": {
+            content: '"..............:"',
+          },
+        },
+      },
+    },
     MuiChip: {
       root: {
         borderRadius: 0,
