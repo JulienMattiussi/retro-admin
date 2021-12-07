@@ -56,6 +56,7 @@ const theme = createTheme({
         "& h6, p": {
           color: "inherit",
         },
+        transition: "none",
       },
       rounded: {
         borderRadius: 0,
@@ -182,6 +183,37 @@ const theme = createTheme({
       root: {
         color: "white",
         flexDirection: "row",
+        "& .ql-toolbar": {
+          "& span": {
+            color: "white !important",
+          },
+          "& svg": {
+            fill: "white !important",
+            "& .ql-stroke": {
+              stroke: "white !important",
+            },
+          },
+          "& button, .ql-picker": {
+            "&:hover": {
+              backgroundColor: "#ff0 !important",
+              "& .ql-picker-label": {
+                color: "black !important",
+              },
+              "& .ql-stroke": {
+                stroke: "black !important",
+              },
+            },
+          },
+        },
+        "& .ql-editor": {
+          backgroundColor: "black !important",
+          "&:before": {
+            content: "unset !important",
+          },
+          "&:after": {
+            content: "unset !important",
+          },
+        },
       },
     },
     MuiFormLabel: {
@@ -190,10 +222,17 @@ const theme = createTheme({
         minWidth: 250,
         padding: 0,
         margin: 0,
+        marginRight: 20,
         width: "250px",
         overflow: "hidden",
+        "&:empty": {
+          display: "none",
+        },
         "& span": {
-          backgroundColor: "inherit",
+          backgroundColor: "#0000a8",
+        },
+        "&.Mui-disabled": {
+          color: "white",
         },
         "&:after": {
           content: '"........................................:"',
@@ -213,7 +252,7 @@ const theme = createTheme({
       },
       formControl: {
         display: "flex",
-        transform: "none",
+        transform: "scale(1) !important",
         alignItems: "center",
         position: "relative",
         "&.Mui-focused": {
@@ -222,9 +261,47 @@ const theme = createTheme({
       },
       shrink: {
         display: "flex",
-        transform: "none",
+        transform: "scale(1) !important",
         alignItems: "center",
         position: "relative",
+      },
+      marginDense: {
+        transform: "scale(1) !important",
+      },
+    },
+    RaCheckboxGroupInput: {
+      label: {
+        transform: "scale(1) !important",
+      },
+    },
+    MuiFormGroup: {
+      root: {
+        position: "absolute",
+        top: -25,
+        left: 260,
+      },
+    },
+    RaFileInput: {
+      dropZone: {
+        backgroundColor: "transparent",
+        color: "white",
+        border: "solid 2px white",
+      },
+    },
+    RaImageInput: {
+      dropZone: {
+        backgroundColor: "transparent",
+        color: "white",
+        border: "solid 2px white",
+      },
+    },
+    MuiInputBase: {
+      root: {
+        minWidth: 200,
+      },
+      input: {
+        padding: 0,
+        height: 30,
       },
     },
     MuiInput: {
@@ -246,6 +323,79 @@ const theme = createTheme({
           transition: "none",
           border: "none",
           content: "unset",
+        },
+      },
+    },
+    MuiFilledInput: {
+      root: {
+        backgroundColor: "transparent",
+        "&:hover": {
+          backgroundColor: "transparent",
+          transition: "none",
+          fill: "black",
+        },
+        "&.Mui-disabled": {
+          backgroundColor: "transparent",
+        },
+        "&.Mui-focused": {
+          backgroundColor: "transparent",
+        },
+        "& svg": {
+          transition: "none",
+          fill: "white",
+          "&:hover": {
+            transition: "none",
+            fill: "black",
+          },
+        },
+      },
+      adornedEnd: {
+        paddingRight: 0,
+      },
+      inputMarginDense: {
+        paddingTop: "0 !important",
+        paddingBottom: "0 !important",
+      },
+      multiline: {
+        padding: 0,
+        paddingTop: "0 !important",
+        paddingBottom: "0 !important",
+      },
+      input: {
+        height: 30,
+        display: "flex",
+        padding: 0,
+        backgroundColor: "black",
+        color: "white",
+        marginTop: "0 !important",
+        borderRadius: 0,
+        boxSizing: "border-box",
+        "&.Mui-disabled": {
+          backgroundColor: "transparent",
+        },
+      },
+      underline: {
+        transition: "none",
+        border: "none",
+        "&:before": {
+          transition: "none",
+          border: "none",
+          content: "unset",
+        },
+        "&:after": {
+          transition: "none",
+          border: "none",
+          content: "unset",
+        },
+      },
+    },
+    RaResettableTextField: {
+      clearButton: {
+        "&:hover": {
+          "& svg": {
+            transition: "none",
+            fill: "black",
+          },
         },
       },
     },
@@ -282,9 +432,57 @@ const theme = createTheme({
         height: 20,
       },
     },
+    MuiTabs: {
+      flexContainer: {
+        color: "cyan",
+        backgroundColor: "#0000a8",
+        transition: "none",
+        borderBottom: "2px solid",
+      },
+      root: {
+        color: "cyan",
+        backgroundColor: "inherit",
+        transition: "none",
+        borderBottom: "2px solid",
+      },
+    },
+    MuiTab: {
+      root: {
+        "&:hover": {
+          color: "black",
+          backgroundColor: "#ff0",
+          opacity: 1,
+        },
+        "&.Mui-selected": {
+          color: "black",
+          backgroundColor: "#ff0",
+          opacity: 1,
+        },
+      },
+      textColorPrimary: {
+        "&:hover": {
+          color: "black",
+          backgroundColor: "#ff0",
+          opacity: 1,
+        },
+        "&.Mui-selected": {
+          color: "black",
+          backgroundColor: "#ff0",
+          opacity: 1,
+        },
+      },
+    },
+    PrivateTabIndicator: {
+      root: {
+        display: "none",
+      },
+    },
     RaLayout: {
       content: {
-        backgroundColor: "inherit",
+        backgroundColor: "#0000a8",
+        borderStyle: "double",
+        borderWidth: "thick",
+        borderColor: "white",
       },
       root: {
         "& .edit-page": {
@@ -384,9 +582,6 @@ const theme = createTheme({
     RaList: {
       root: {
         backgroundColor: "#0000a8",
-        borderStyle: "double",
-        borderWidth: "thick",
-        borderColor: "white",
       },
       main: {
         color: "white",
@@ -401,25 +596,22 @@ const theme = createTheme({
     RaEdit: {
       root: {
         backgroundColor: "#0000a8",
-        borderStyle: "double",
-        borderWidth: "thick",
-        borderColor: "white",
+      },
+      main: {
+        color: "white",
       },
     },
     RaShow: {
       root: {
         backgroundColor: "#0000a8",
-        borderStyle: "double",
-        borderWidth: "thick",
-        borderColor: "white",
+      },
+      main: {
+        color: "white",
       },
     },
     RaCreate: {
       root: {
         backgroundColor: "#0000a8",
-        borderStyle: "double",
-        borderWidth: "thick",
-        borderColor: "white",
       },
     },
     RaToolbar: {
@@ -427,17 +619,40 @@ const theme = createTheme({
         backgroundColor: "#0000a8",
       },
     },
-    RaBulkActionsToolbar: {
+    RaListToolbar: {
       toolbar: {
         color: "cyan",
         backgroundColor: "inherit",
         transition: "none",
         borderBottom: "2px solid",
       },
+    },
+    RaBulkActionsToolbar: {
+      toolbar: {
+        color: "cyan",
+        backgroundColor: "inherit",
+        transition: "none",
+      },
       icon: {
         backgroundColor: "#00a800",
         color: "black",
         boxShadow: "10px 10px black",
+        transition: "none",
+      },
+    },
+    MuiListItem: {
+      root: {
+        transition: "none",
+        "& svg": {
+          transition: "none",
+        },
+      },
+      button: {
+        transition: "none",
+      },
+    },
+    MuiCollapse: {
+      root: {
         transition: "none",
       },
     },
