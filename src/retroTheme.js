@@ -77,7 +77,7 @@ const theme = {
         boxShadow: `10px 10px ${colorBlack} !important`,
         padding: 6,
         height: "100%",
-        zIndex: 8,
+        zIndex: 2,
         "& nav": {
           top: 8,
           "& ul": {
