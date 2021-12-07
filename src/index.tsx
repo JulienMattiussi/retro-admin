@@ -269,6 +269,7 @@ const theme = createTheme({
         transform: "scale(1) !important",
       },
     },
+    /* @ts-ignore */
     RaCheckboxGroupInput: {
       label: {
         transform: "scale(1) !important",
@@ -717,6 +718,7 @@ const theme = createTheme({
 render(
   <React.StrictMode>
     <Admin
+      /* @ts-ignore */
       authProvider={authProvider}
       dataProvider={dataProvider}
       i18nProvider={i18nProvider}
@@ -737,8 +739,10 @@ render(
       ]}
     >
       {(permissions) => [
+        /* @ts-ignore */
         <Resource name="posts" {...posts} />,
         <Resource name="comments" {...comments} />,
+        /* @ts-ignore */
         permissions ? <Resource name="users" {...users} /> : null,
         <Resource name="tags" {...tags} />,
       ]}

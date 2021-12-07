@@ -12,7 +12,7 @@ const Menu = ({}) => {
 
   const posts = resources[0];
   return (
-    <nav className={classnames(classes.root, "tui-sidenav active")}>
+    <nav className={classnames(classes.root, "tui-sidenav", "active")}>
       {posts && (
         <ul>
           <li>
