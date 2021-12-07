@@ -26,21 +26,9 @@ const theme = createTheme({
     //type: "dark",
   },
   overrides: {
-    /*     MuiMenu: {
-      paper: {
-        borderRadius: 0,
-        color: "blue !important",
-      },
-    }, */
     MuiButtonBase: {
       root: {
-        // recreate a static ripple color
-        // use the currentColor to make it work both for outlined and contained buttons
-        // but to dim the background without dimming the text,
-        // put another element on top with a limited opacity
         content: '""',
-        //backgroundColor: "yellow !important",
-        //opacity: 0.3,
         borderRadius: "inherit",
       },
     },
@@ -81,6 +69,50 @@ const theme = createTheme({
         transition: "none",
         lineHeight: "inherit",
         boxShadow: "none",
+      },
+    },
+    RaSidebar: {
+      fixed: {
+        display: "block !important",
+        top: 8,
+        position: "fixed",
+        left: 0,
+        backgroundColor: "#00a8a8",
+        minWidth: 200,
+        boxShadow: "10px 10px #000 !important",
+        padding: 6,
+        height: "100%",
+        zIndex: 8,
+        "& nav": {
+          top: 8,
+          "& ul": {
+            border: "2px #000 solid",
+            margin: 0,
+            padding: 0,
+            listStyleType: "none",
+            marginTop: -2,
+            textTransform: "capitalize",
+            "& li": {
+              display: "block",
+              margin: 6,
+
+              "& a": {
+                paddingLeft: 1,
+                display: "block",
+                color: "black",
+                "&:hover": {
+                  backgroundColor: "#ff0",
+                },
+                "&::first-letter": {
+                  color: "#a80000",
+                },
+              },
+            },
+            "&:first-child": {
+              marginTop: 20,
+            },
+          },
+        },
       },
     },
     MuiPaper: {
