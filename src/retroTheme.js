@@ -112,7 +112,9 @@ const theme = {
     },
     MuiPaper: {
       root: {
-        borderRadius: 0,
+        borderRadius: "0 !important",
+        borderTopLeftRadius: "0 !important",
+        borderTopRightRadius: "0 !important",
         backgroundColor: colorDarkBlue,
         color: colorWhite,
         "& h6, p": {
@@ -520,6 +522,7 @@ const theme = {
     },
     MuiTab: {
       root: {
+        color: colorCyan,
         "&:hover": {
           color: colorBlack,
           backgroundColor: colorYellow,
@@ -532,6 +535,7 @@ const theme = {
         },
       },
       textColorPrimary: {
+        color: colorCyan,
         "&:hover": {
           color: colorBlack,
           backgroundColor: colorYellow,
@@ -549,6 +553,23 @@ const theme = {
         display: "none",
       },
     },
+    RaFilterFormInput: {
+      hideButton: {
+        color: colorCyan,
+        height: 42,
+        "&:hover": {
+          color: colorBlack,
+        },
+        "& span.MuiIconButton-label": {
+          "&:before": {
+            content: '"X"',
+          },
+          "& svg": {
+            display: "none",
+          },
+        },
+      },
+    },
     RaLayout: {
       content: {
         backgroundColor: colorDarkBlue,
@@ -557,6 +578,7 @@ const theme = {
         borderColor: colorWhite,
       },
       root: {
+        fontFamily: "Lucida Console, monospace",
         backgroundImage: `url(${backImage})`,
         "& .edit-page": {
           backgroundColor: colorDarkBlue,
@@ -731,6 +753,7 @@ const theme = {
     },
     MuiPopover: {
       paper: {
+        fontFamily: "Lucida Console, monospace",
         backgroundColor: colorBrown,
         color: colorWhite,
         "& ul > li": {
@@ -760,6 +783,7 @@ const theme = {
     },
     RaLogin: {
       main: {
+        fontFamily: "Lucida Console, monospace",
         backgroundImage: `url(${backImage})`,
         backgroundRepeat: "repeat",
         backgroundSize: "initial",

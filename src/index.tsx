@@ -5,8 +5,6 @@ import { render } from "react-dom";
 import { Route } from "react-router-dom";
 import { createTheme } from "@material-ui/core/styles";
 import retroTheme from "./retroTheme";
-//import backImage from "file!./images/bg-blue-black.png";
-//const backImage = require("./images/bg-blue-black.png");
 
 import authProvider from "./authProvider";
 import comments from "./comments";
