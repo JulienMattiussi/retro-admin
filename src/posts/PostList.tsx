@@ -121,7 +121,6 @@ const PostList = (props) => {
       filters={postFilter}
       sort={{ field: "published_at", order: "DESC" }}
       exporter={exporter}
-      className="tui-window"
     >
       {isSmall ? (
         <SimpleList

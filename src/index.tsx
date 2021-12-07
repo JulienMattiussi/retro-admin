@@ -44,6 +44,45 @@ const theme = createTheme({
         borderRadius: "inherit",
       },
     },
+    MuiAppBar: {
+      colorSecondary: {
+        width: "100%",
+        zIndex: 9,
+        display: "block",
+        position: "fixed",
+        backgroundColor: "rgb(168, 168, 168)",
+        padding: "0px 2px",
+        height: 26,
+        lineHeight: "26px",
+        color: "black",
+        "& div": {
+          height: "inherit",
+          lineHeight: "inherit",
+          minHeight: "unset",
+        },
+        boxShadow: "none !important",
+      },
+    },
+    /* @ts-ignore */
+    RaUserMenu: {
+      avatar: {
+        height: "20px !important",
+        width: "24px !important",
+        lineHeight: "20px !important",
+        borderRadius: 0,
+        "& img": {
+          filter: "contrast(1000%)",
+        },
+      },
+      userButton: {
+        color: "black",
+        padding: 0,
+        fontSize: "inherit",
+        transition: "none",
+        lineHeight: "inherit",
+        boxShadow: "none",
+      },
+    },
     MuiPaper: {
       root: {
         // recreate a static ripple color
@@ -495,6 +534,8 @@ const theme = createTheme({
         borderColor: "white",
       },
       root: {
+        backgroundImage:
+          "url(node_modules/tuicss/dist/images/bg-blue-black.png)",
         "& .edit-page": {
           backgroundColor: "#0000a8",
           borderStyle: "double",
