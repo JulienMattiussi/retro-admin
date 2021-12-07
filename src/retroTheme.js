@@ -1,3 +1,5 @@
+import backImage from "./assets/bg-blue-black.png";
+
 const colorYellow = "#ff0";
 const colorDarkBlue = "#0000a8";
 const colorCyan = "cyan";
@@ -555,8 +557,7 @@ const theme = {
         borderColor: colorWhite,
       },
       root: {
-        backgroundImage:
-          "url(node_modules/tuicss/dist/images/bg-blue-black.png)",
+        backgroundImage: `url(${backImage})`,
         "& .edit-page": {
           backgroundColor: colorDarkBlue,
           borderStyle: "double",
@@ -759,8 +760,7 @@ const theme = {
     },
     RaLogin: {
       main: {
-        backgroundImage:
-          "url(node_modules/tuicss/dist/images/bg-blue-black.png)",
+        backgroundImage: `url(${backImage})`,
         backgroundRepeat: "repeat",
         backgroundSize: "initial",
       },

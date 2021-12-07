@@ -46,11 +46,4 @@ const MyAppBar = memo((props) => {
   return <AppBar {...props} userMenu={<MyUserMenu />} />;
 });
 
-export default (props) => (
-  <Layout
-    {...props}
-    appBar={MyAppBar}
-    menu={MyMenu}
-    className="tui-bg-blue-black"
-  />
-);
+export default (props) => <Layout {...props} appBar={MyAppBar} menu={MyMenu} />;
