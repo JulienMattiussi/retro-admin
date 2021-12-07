@@ -492,6 +492,8 @@ const theme = {
     MuiChip: {
       root: {
         borderRadius: 0,
+        transition: "none",
+        backgroundColor: colorBlack,
       },
       labelSmall: {
         paddingLeft: 0,
