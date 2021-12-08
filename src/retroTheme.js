@@ -832,6 +832,7 @@ const theme = {
         borderColor: colorWhite,
         transition: "none !important",
         minWidth: 600,
+        paddingBottom: 10,
       },
     },
   },
