@@ -96,6 +96,7 @@ const theme = {
                 display: "block",
                 color: colorBlack,
                 "&:hover": {
+                  color: colorBlack,
                   backgroundColor: colorYellow,
                 },
                 "&::first-letter": {
@@ -187,6 +188,7 @@ const theme = {
         marginRight: 10,
         borderRadius: 0,
         "&:hover": {
+          color: `${colorBlack} !important`,
           backgroundColor: `${colorYellow} !important`,
           borderRadius: 0,
         },
@@ -198,6 +200,7 @@ const theme = {
     MuiButton: {
       root: {
         "&:hover": {
+          color: colorBlack,
           backgroundColor: `${colorYellow} !important`,
           borderRadius: 0,
         },
