@@ -367,6 +367,18 @@ const theme = {
       input: {
         padding: 0,
         height: 30,
+        minHeight: 30,
+      },
+    },
+    MuiSelect: {
+      select: {
+        "&:focus": {
+          color: colorBlack,
+          backgroundColor: colorYellow,
+        },
+      },
+      selectMenu: {
+        minHeight: 30,
       },
     },
     MuiInput: {
@@ -472,6 +484,15 @@ const theme = {
         "&.Mui-error": {
           color: colorWhite,
           backgroundColor: "red",
+        },
+      },
+    },
+    RaCardContentInner: {
+      root: {
+        "& .ra-input-post_id": {
+          "& button:nth-child(2)": {
+            marginLeft: 250,
+          },
         },
       },
     },
