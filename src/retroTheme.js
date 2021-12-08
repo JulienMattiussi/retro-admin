@@ -731,6 +731,9 @@ const theme = {
       root: {
         backgroundColor: colorDarkBlue,
       },
+      main: {
+        color: colorWhite,
+      },
     },
     RaToolbar: {
       toolbar: {
