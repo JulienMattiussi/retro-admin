@@ -362,6 +362,13 @@ const theme = {
         color: colorWhite,
         border: "solid 2px white",
       },
+      root: {
+        "& .previews": {
+          "& img": {
+            filter: "contrast(1000%)",
+          },
+        },
+      },
     },
     MuiInputBase: {
       root: {
