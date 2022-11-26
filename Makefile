@@ -6,6 +6,9 @@ help:
 install: package.json ## install dependencies
 	echo "Full install..."
 	yarn
+	
+start: package.json
+		@yarn start
 
 run: ## run the site locally
 	@yarn dev
